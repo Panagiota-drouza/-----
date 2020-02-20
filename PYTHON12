@@ -1,0 +1,54 @@
+import calendar
+from datetime import date
+
+Month = int(input("Dwse mhna"))
+while (Month < 1 ) or (Month > 12):
+    Month = int(input("dwse Month"))
+Year = int(input("Dwse xronologia"))
+while Year < 0:
+	Year = ("Dwse xronologia")
+if (Month%2 == 1) and (Month <= 7):
+	Day = int(input("Dwse Day"))
+	while (Day < 1) or (Day > 31):
+		Day = int(input("Dwse Day"))
+elif (Month%2 == 0) and (Month >= 8):
+	Day = int(input("Dwse Day"))
+	while (Day < 1 or Day > 31):
+		Day = int(input("Dwse Day"))
+else:
+    if (Year%4 == 0 or Year%100 == 0 or Year%400 == 0): # elegxw ean einai disekto
+        disekto = 1
+        Day = int(input("Dwse Day"))
+        while (Day < 1 or Day > 29):
+         Day = int(input("Dwse Day"))
+    else:
+        Day = int(input("Dwse Day"))
+        while (Day < 1 or Day > 28):
+         Day = int(input("Dwse Day"))
+print("Hhmerominia poy dwsate einai: " + str(Day) + "/" + str(Month) + "/" + str(Year))
+s_Day = int(input("Dwse tn shmerinh Day"))
+s_Month = int(input("Dwse ton trexon mhna"))
+s_Year = int(input("Dwse to trexon Year"))
+print("h shmerinh hmerominia einai: " + str(s_Day) + "/" + str(s_Month) + "/" + str(s_Year))
+if s_Year > Year :
+    d1 = s_Year-Year
+else:
+    d1 = Year-s_Year
+if Month > s_Month :
+    d2 = Month-s_Month
+else:
+    d2 = s_Month-Month
+if Day > s_Day :
+    d3 = Day-s_Day
+else:
+    d3 = s_Day-Day
+print(calendar.monthrange(Year, Month)[1])
+d1 = date(Year, Month, Day)
+d2 = date(s_Year,s_Month, s_Day)
+delta = d2 - d1
+print("h diafora se meres einai")
+print(delta.days)
+print(" H diafora se Hours einai")
+print(delta.days*24)
+print("H diafora se deuterolepta einai")
+print(delta.days*24*3600)
