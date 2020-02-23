@@ -3,8 +3,8 @@ x = x*3 + 1
 while x > 9 :
     sum = 0
     while x > 9:
-        sum = sum + (x//10)
-        x = x % 10
+        sum = sum + (x % 10)
+        x = x // 10
     sum = sum + x
     x = sum
     print(x)
