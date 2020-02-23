@@ -1,0 +1,19 @@
+import sys
+fonien = ["α","ε","η","ι","ο","υ","ω","Α","Ε","Η","Ω","Ι","Ο","Υ"]
+long_list = []
+next = []
+with open(long_file,"r") as f:
+   for x in f:
+     for word in x.split():
+        long_list.append(word)
+        print (word)
+print (f.read())
+for i in range (sum = len(long_list)):
+   long_list[i] = long_list[i].strip()
+long_list = long_list.sort(key= fun)
+next = long_list[::-1]
+for i in range (0,4):
+   for j in next :
+      for j in fonien :
+         next[i]= next[i].replace(j,'')
+print (next)
